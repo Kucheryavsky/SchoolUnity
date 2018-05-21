@@ -1,0 +1,30 @@
+﻿<Page x:Class="school_unity.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:school_unity"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="525"
+      Title="MainScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="LoginButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Grid.Row="2" Background="White" Click="LoginButton_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="311" Height="48" FontSize="14"  Grid.Row="1"><Run Text="Здравству"/><Run Text="й"/><Run Text="те! Войдите в свой профиль "/><LineBreak/><Run Text="или перейдите к форме регистрации!"/></TextBlock>
+        <Button x:Name="RegistrationButton" Content="Зарегистрироваться" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Grid.Row="3" Background="White" Click="RegistrationButton_Click"/>
+
+
+    </Grid>
+</Page>

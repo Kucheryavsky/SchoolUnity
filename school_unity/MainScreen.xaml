@@ -13,7 +13,7 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
 
@@ -23,7 +23,6 @@
 
         <Button x:Name="LoginButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Grid.Row="2" Background="White" Click="LoginButton_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="311" Height="48" FontSize="14"  Grid.Row="1"><Run Text="Здравству"/><Run Text="й"/><Run Text="те! Войдите в свой профиль "/><LineBreak/><Run Text="или перейдите к форме регистрации!"/></TextBlock>
-        <Button x:Name="RegistrationButton" Content="Зарегистрироваться" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Grid.Row="3" Background="White" Click="RegistrationButton_Click"/>
 
 
     </Grid>

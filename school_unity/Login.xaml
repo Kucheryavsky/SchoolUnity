@@ -24,11 +24,13 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="65" FontSize="14"  Grid.Row="1" Text="Введите данные и нажмите на &quot;Войти&quot;" Grid.Column="1" />
-        <Button x:Name="EnterButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="4" Background="White" Grid.Column="1"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="24"  Grid.Row="2" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Center" Width="250" Grid.Column="1" />
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Center" Height="24"  Grid.Row="3" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Center" Width="250" Grid.Column="1" />
+        <Button x:Name="EnterButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="4" Background="White" Grid.Column="1" Click="EnterButton_Click"/>
+        <TextBox x:Name="LoginTB" HorizontalAlignment="Center" Height="24"  Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="250" Grid.Column="1" />
+        <PasswordBox x:Name="PasswordTB" HorizontalAlignment="Center" Height="24"  Grid.Row="3" VerticalAlignment="Bottom" Width="250" Grid.Column="1" />
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="350" Grid.RowSpan="6" VerticalAlignment="Top" Width="105" Cursor="Hand" MouseUp="Rectangle_MouseUp"/>
         <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  Text="&lt;" FontSize="40" VerticalAlignment="Center" Cursor="Hand" MouseUp="Rectangle_MouseUp"  Grid.RowSpan="5" Width="105"/>
+        <TextBlock x:Name="textBlockL" HorizontalAlignment="Center"  VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="23" FontSize="14"  Grid.Row="2" Text="Имя пользователя:" Grid.Column="1"   />
+        <TextBlock x:Name="textBlockP" HorizontalAlignment="Center"  VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="23" FontSize="14"  Grid.Row="3" Text="Пароль:" Grid.Column="1"   />
 
     </Grid>
 </Page>

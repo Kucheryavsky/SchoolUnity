@@ -9,6 +9,7 @@
       Title="admin">
 
     <Grid>
-        
+        <Label Content="ADM" HorizontalAlignment="Left" Margin="129,136,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

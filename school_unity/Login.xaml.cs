@@ -39,7 +39,7 @@ namespace school_unity
             string Password = PasswordTB.Password;
 
 
-            var logining = uta.Login(ds.User, Login, Password); // Проверяем наличие в базе данных
+            var logining = uta.LoginFill(ds.User, Login, Password); // Проверяем наличие в базе данных
             if (logining == 1)
             {
                 string UserRole = (string)ds.User[0]["RoleID"]; // Настраиваем переходы в зависимости от роли
@@ -59,10 +59,6 @@ namespace school_unity
                     NavigationService.Navigate(new UserMenu.teacher());
                 }
 
-                if (UserRole == "4")
-                {
-                    NavigationService.Navigate(new UserMenu.parent());
-                }
 
             }
             else //Обрабатываем исключения

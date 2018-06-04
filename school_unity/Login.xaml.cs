@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +23,8 @@ namespace school_unity
     /// </summary>
     public partial class Login : Page
     {
+
+
         public Login()
         {
             InitializeComponent();
@@ -29,14 +33,21 @@ namespace school_unity
         DataSet1 ds = new DataSet1();
         UserTableAdapter uta = new UserTableAdapter();
 
+        public string CalculateMD5Hash()
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            string pass = PasswordTB.Password;
+            byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(pass));
+            string result = BitConverter.ToString(checkSum).Replace("-", String.Empty);
+            return result;
+        }
 
-     
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
             string Login = LoginTB.Text;
-           // school_unity.PubLogin = Login; //Запоминаем логин пользователя, для дальнейшего взаимодействия
-            string Password = PasswordTB.Password;
+            string Password = CalculateMD5Hash(); 
+            // school_unity.PubLogin = Login; //Запоминаем логин пользователя, для дальнейшего взаимодействия
 
 
             var logining = uta.LoginFill(ds.User, Login, Password); // Проверяем наличие в базе данных
@@ -49,12 +60,8 @@ namespace school_unity
                     NavigationService.Navigate(new UserMenu.admin());
                 }
 
-                if (UserRole == "2")
-                {
-                    NavigationService.Navigate(new UserMenu.schoolkid());
-                }
-                
-                if (UserRole == "3")
+            
+                if (UserRole == "4")
                 {
                     NavigationService.Navigate(new UserMenu.teacher());
                 }
@@ -66,7 +73,12 @@ namespace school_unity
                 MessageBox.Show("Неправильный логин или пароль!");
             }
 
+     
+
+
         }
+
+     
 
         private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
         {

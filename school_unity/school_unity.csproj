@@ -87,9 +87,6 @@
     <Compile Include="UserMenu\admin.xaml.cs">
       <DependentUpon>admin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserMenu\headteacher.xaml.cs">
-      <DependentUpon>headteacher.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserMenu\teacher.xaml.cs">
       <DependentUpon>teacher.xaml</DependentUpon>
     </Compile>
@@ -118,10 +115,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserMenu\admin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserMenu\headteacher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

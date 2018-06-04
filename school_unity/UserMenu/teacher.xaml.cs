@@ -24,5 +24,10 @@ namespace school_unity.UserMenu
         {
             InitializeComponent();
         }
+
+        private void QuitSession_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Login());
+        }
     }
 }

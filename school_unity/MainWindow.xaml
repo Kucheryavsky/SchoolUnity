@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:school_unity"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Frame Name="MainFrame" Source="MainScreen.xaml" NavigationUIVisibility="Hidden">
+    <Frame Name="MainFrame" Source="Login.xaml" NavigationUIVisibility="Hidden">
        
     </Frame>
 </Window>

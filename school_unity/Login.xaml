@@ -23,7 +23,7 @@
             <ColumnDefinition Width="1*"/>
             
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="65" FontSize="14"  Grid.Row="1" Text="Введите данные и нажмите на &quot;Войти&quot;" Grid.Column="1" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="65" FontSize="14"  Grid.Row="1" Text="Введите данные и нажмите &quot;Войти&quot;" Grid.Column="1" />
         <Button x:Name="EnterButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="4" Background="White" Grid.Column="1" Click="EnterButton_Click"/>
         <TextBox x:Name="LoginTB" HorizontalAlignment="Center" Height="24"  Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="250" Margin="0,0,0,18" />
         <PasswordBox x:Name="PasswordTB" HorizontalAlignment="Center" Height="24"  Grid.Row="3" VerticalAlignment="Bottom" Width="250" Margin="0,0,0,18" />

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:school_unity.UserMenu"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="350" d:DesignWidth="525"
       Title="teacher">
 
     <Grid>
@@ -22,7 +22,7 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="65" FontSize="14"  Grid.Row="1" Text="Выберите пункт и нажмите на него" Grid.Column="1" />
-        <Button x:Name="Marks" Content="Оценки" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="2" Background="White" />
+        <Button x:Name="Marks" Content="Журнал" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="2" Background="White" />
         <Button x:Name="x" Content="Ученики" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="3" Background="White"  />
         <Button x:Name="QuitSession" Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="4" Background="White" Click="QuitSession_Click" />
 

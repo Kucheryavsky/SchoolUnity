@@ -5,11 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:school_unity.UserMenu"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="350" d:DesignWidth="525"
       Title="admin">
 
-    <Grid>
-        <Label Content="ADM" HorizontalAlignment="Left" Margin="129,136,0,0" VerticalAlignment="Top"/>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="310" Height="45" FontSize="14" Text="Выберите пункт и нажмите на него" />
+        <Button x:Name="AddSchoolarButton" Content="Добавление данных ученика" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Background="White" />
+        <Button x:Name="AddUserButton" Content="Регистрация нового пользователя" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Background="White" Click="AddUserButton_Click" />
+        <Button x:Name="EditSchoolarButton" Content="Редактирование данных ученика" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Background="White" />
 
-    </Grid>
+        <Button x:Name="ExitButton_Copy" Content="Выход из системы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="311" Height="47" Background="White" Click="ExitButton_Click"/>
+    </StackPanel>
 </Page>

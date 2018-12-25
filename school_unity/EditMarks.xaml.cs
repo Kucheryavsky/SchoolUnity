@@ -28,7 +28,7 @@ namespace school_unity
 
         private void Marks_Loaded(object sender, RoutedEventArgs e)
         {
-            DataSet1 ds = new DataSet1();
+            /*DataSet1 ds = new DataSet1();
             MarkManagementTableAdapter mmta = new MarkManagementTableAdapter();
             StudentTableAdapter sta = new StudentTableAdapter();
             SubjectTableAdapter subta = new SubjectTableAdapter();

@@ -33,11 +33,12 @@ namespace school_unity
         DataSet1 ds = new DataSet1();
         UserTableAdapter uta = new UserTableAdapter();
 
-        public string CalculateMD5Hash()
+        public string CalculateSHA256Hash()
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
+
+            SHA256 sha256 = new SHA256CryptoServiceProvider();
             string pass = PasswordTB.Password;
-            byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(pass));
+            byte[] checkSum = sha256.ComputeHash(Encoding.UTF8.GetBytes(pass));
             string result = BitConverter.ToString(checkSum).Replace("-", String.Empty);
             return result;
         }
@@ -46,7 +47,7 @@ namespace school_unity
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
             string Login = LoginTB.Text;
-            string Password = CalculateMD5Hash(); 
+            string Password = CalculateSHA256Hash(); 
             // school_unity.PubLogin = Login; //Запоминаем логин пользователя, для дальнейшего взаимодействия
 
 

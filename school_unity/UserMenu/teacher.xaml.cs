@@ -29,5 +29,15 @@ namespace school_unity.UserMenu
         {
             NavigationService.Navigate(new Login());
         }
+
+        private void Marks_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EditMarks());
+        }
+
+        private void X_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Students());
+        }
     }
 }

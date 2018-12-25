@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="1295" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:AboutRelations" ZOrder="9" X="1305" Y="65" Height="134" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:User" ZOrder="1" X="1628" Y="52" Height="172" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:User" ZOrder="1" X="1628" Y="52" Height="210" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:MarkManagement" ZOrder="8" X="2312" Y="53" Height="267" Width="252" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:Parent" ZOrder="7" X="2084" Y="53" Height="210" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:Relation" ZOrder="6" X="2119" Y="334" Height="115" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
@@ -117,7 +117,7 @@
       <RoutePoints>
         <Point>
           <X>1645</X>
-          <Y>224</Y>
+          <Y>262</Y>
         </Point>
         <Point>
           <X>1645</X>

@@ -39,5 +39,10 @@ namespace school_unity.UserMenu
         {
             NavigationService.Navigate(new Students());
         }
+
+        private void Changepas_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ChangePassword());
+        }
     }
 }

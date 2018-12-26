@@ -81,6 +81,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DeleteUser.xaml.cs">
+      <DependentUpon>DeleteUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditMarks.xaml.cs">
       <DependentUpon>EditMarks.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <DependentUpon>teacher.xaml</DependentUpon>
     </Compile>
     <Page Include="ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -9,8 +9,6 @@
       Title="Students">
 
     <StackPanel>
-        <ComboBox x:Name="Class"/>
-        <ComboBox x:Name="Student"/>
         <DataGrid x:Name="Students1" Height="360" Loaded="Students_Loaded"/>
         <Button x:Name="Update" Content="Обновить"  Height="25"/>
         <Button x:Name="Back" Content="Назад"  Height="25"/>

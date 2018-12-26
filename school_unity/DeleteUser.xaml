@@ -1,0 +1,26 @@
+﻿<Page x:Class="school_unity.DeleteUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:school_unity"
+      mc:Ignorable="d" d:DesignWidth="600"
+      Title="DeleteUser" Height="358">
+
+    <StackPanel Margin="0,0,0,28">
+        <DataGrid x:Name="Users" Height="220" Loaded="Marks_Loaded" IsReadOnly="True" AutoGenerateColumns="False" DisplayMemberPath="Name">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding UserID}"  Header="UserID" Width="*" />
+                <DataGridTextColumn Binding="{Binding Login}" IsReadOnly="True" Header="Login" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Password}"  Header="Password" Width="*"/>
+                <DataGridTextColumn Binding="{Binding RoleID}"  Header="RoleID" Width="*"/>
+               
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button x:Name="Delete" Content="Удалить"  Height="25" Click="Delete_Click"/>
+        <Button x:Name="Back" Content="Назад"  Height="25" Click="Back_Click"/>
+
+    </StackPanel>
+</Page>

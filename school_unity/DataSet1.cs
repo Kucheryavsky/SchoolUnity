@@ -9,6 +9,10 @@
 
 namespace school_unity.DataSet1TableAdapters
 {
+    partial class DataTable1TableAdapter
+    {
+    }
+
     partial class MarkManagementTableAdapter
     {
     }

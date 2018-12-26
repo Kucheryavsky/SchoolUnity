@@ -34,5 +34,10 @@ namespace school_unity.UserMenu
         {
             NavigationService.Navigate(new Registration());
         }
+
+        private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DeleteUser());
+        }
     }
 }

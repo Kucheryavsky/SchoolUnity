@@ -24,7 +24,7 @@ namespace school_unity
     {
         DataSet1 ds = new DataSet1();
         MarkManagementTableAdapter mmta = new MarkManagementTableAdapter();
-        StudentTableAdapter sta = new StudentTableAdapter();
+        UserTableAdapter uta = new UserTableAdapter();
         SubjectTableAdapter subta = new SubjectTableAdapter();
         DataTable1TableAdapter dtdt = new DataTable1TableAdapter();
         public ChangePassword()
@@ -43,19 +43,17 @@ namespace school_unity
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //if(OldPas.Text==1)
-            //string pas = ComputeHash(Password.Text, new SHA256CryptoServiceProvider());
-            
+            string pas = ComputeHash(OldPas.Text, new SHA256CryptoServiceProvider());
+            string pasnew = ComputeHash(NewPas.Text, new SHA256CryptoServiceProvider());
 
-
-
-
-            //var registrationcheck = uta.Catch(ds.User, log);
-          //  if (registrationcheck == 1)//Проверяем наличие идентичного логина в БД
-           // {
-          //      MessageBox.Show("К сожалению, пользователь с таким же именем уже зарегистрирован! Пожалуйста измените логин.");
-          //      return;
-           // }
+            var registrationcheck = uta.FillPassword(ds.User, OldPas.Text);
+           if (registrationcheck == 1)//Проверяем наличие идентичного логина в БД
+            {
+                if (Repeat.Text == NewPas.Text)
+                {
+                    uta.NewPassword(pasnew);
+                }
+            }
         }
     }
 }

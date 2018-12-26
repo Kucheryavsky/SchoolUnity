@@ -15,6 +15,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
 
@@ -24,7 +25,8 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="65" FontSize="14"  Grid.Row="1" Text="Выберите пункт и нажмите на него" Grid.Column="1" />
         <Button x:Name="Marks" Content="Журнал" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="2" Background="White" Click="Marks_Click" />
         <Button x:Name="x" Content="Ученики" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="3" Background="White" Click="X_Click"  />
-        <Button x:Name="QuitSession" Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="4" Background="White" Click="QuitSession_Click" />
+        <Button x:Name="changepas" Content="Cменить Пароль" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="4" Background="White"   />
+        <Button x:Name="QuitSession" Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="5" Background="White" Click="QuitSession_Click" />
 
     </Grid>
 </Page>

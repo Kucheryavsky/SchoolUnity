@@ -58,8 +58,9 @@ namespace school_unity
         {
             string log = Login.Text;
             string pas = ComputeHash(Password.Text, new SHA256CryptoServiceProvider());
-            string role = ComboBox.SelectedItem.ToString();
-            int roleid = ComboBox.SelectedIndex;
+            string role = ComboBox.SelectionBoxItem.ToString();
+               
+            
 
 
             var registrationcheck = uta.Catch(ds.User, log);
@@ -71,18 +72,19 @@ namespace school_unity
             else
             { //Если всё верно, то вносим нового пользователя в БД
 
-                uta.RegisterGet(log, pas, roleid);
-                
+                uta.Register(log, pas, role);
 
                 var logining = uta.LoginFill(ds.User, log, pas);
                 if (logining == 1)//Проверяем появился ли пользователь в БД
                 {
                     MessageBox.Show("Вы успешно зарегистрировали пользователя в системе!");
+
                 }
                 else
                 {
                     MessageBox.Show("Упс, шаловливые бесы не дают вам зарегистрировать пользователя!");
                 }
+
             }
         }
     }

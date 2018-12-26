@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
     <Compile Include="UserMenu\teacher.xaml.cs">
       <DependentUpon>teacher.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditMarks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

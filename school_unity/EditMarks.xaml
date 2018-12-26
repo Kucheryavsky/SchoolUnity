@@ -4,32 +4,31 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:school_unity"
-      mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="1300"
-      Title="EditMarks">
+      mc:Ignorable="d" d:DesignWidth="600"
+      Title="EditMarks" Height="600">
 
     <StackPanel>
-        <ComboBox x:Name="Class"/>
-        <ComboBox x:Name="Student"/>
-        <DataGrid x:Name="Marks" Height="500" Loaded="Marks_Loaded" AutoGenerateColumns="False" ItemsSource="{Binding}">
-                              
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Student.StudentName}"  IsReadOnly="True" Header="Имя" Width="*" />
-                    <DataGridTextColumn Binding="{Binding Student.StudentSurname}" IsReadOnly="True" Header="Фамилия" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.Year}"  Header="Год" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.Class}"  Header="Класс" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding Subject.SubjectName}" IsReadOnly="True" Header="Предмет" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.FirstMark}"  Header="1/4" Width="0.5*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.SecondMark}"  Header="2/4" Width="0.5*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.ThirdMark}"  Header="3/4" Width="0.5*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.FourthMark}"  Header="4/4" Width="0.5*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.ExamMark}"  Header="Экзамен" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding MarkManagement.YearMark}"  Header="Итоговая" Width="*"/>
+        <DataGrid x:Name="Marks" Height="220" Loaded="Marks_Loaded" AutoGenerateColumns="False" DisplayMemberPath="Name">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding StudentName}"  IsReadOnly="True" Header="Имя" Width="*" />
+                <DataGridTextColumn Binding="{Binding StudentSurname}" IsReadOnly="True" Header="Фамилия" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Year}"  Header="Год" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Class}"  Header="Класс" Width="*"/>
+                <DataGridTextColumn Binding="{Binding SubjectName}" IsReadOnly="True" Header="Предмет" Width="*"/>
+                <DataGridTextColumn Binding="{Binding FirstMark}"  Header="1/4" Width="0.5*"/>
+                <DataGridTextColumn Binding="{Binding SecondMark}"  Header="2/4" Width="0.5*"/>
+                <DataGridTextColumn Binding="{Binding ThirdMark}"  Header="3/4" Width="0.5*"/>
+                <DataGridTextColumn Binding="{Binding FourthMark}"  Header="4/4" Width="0.5*"/>
+                <DataGridTextColumn Binding="{Binding ExamMark}"  Header="Экзамен" Width="*"/>
+                <DataGridTextColumn Binding="{Binding YearMark}"  Header="Итоговая" Width="*"/>
             </DataGrid.Columns>
-            
+
         </DataGrid>
-        <Button x:Name="Update" Content="Обновить"  Height="25"/>
-        <Button x:Name="Back" Content="Назад"  Height="25"/>
+        <Button x:Name="Add" Content="Добавить"  Height="25" Click="Add_Click"/>
+        <Button x:Name="Delete" Content="Удалить"  Height="25"/>
+        <Button x:Name="Update" Content="Обновить"  Height="25" Click="Update_Click"/>
+        <Button x:Name="Back" Content="Назад"  Height="25" Click="Back_Click"/>
 
     </StackPanel>
 </Page>

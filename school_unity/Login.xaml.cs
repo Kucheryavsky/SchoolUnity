@@ -79,7 +79,16 @@ namespace school_unity
 
         }
 
-     
+        private void EnterButton2_Click(object sender, RoutedEventArgs e)
+        {
+           
+                    NavigationService.Navigate(new EditMarks());
+               
+
+
+
+        }
+
 
         private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
         {

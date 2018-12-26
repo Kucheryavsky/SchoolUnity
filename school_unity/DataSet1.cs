@@ -7,9 +7,12 @@
     }
 }
 
-namespace school_unity.DataSet1TableAdapters {
-    
-    
+namespace school_unity.DataSet1TableAdapters
+{
+    partial class MarkManagementTableAdapter
+    {
+    }
+
     public partial class UserTableAdapter {
     }
 }

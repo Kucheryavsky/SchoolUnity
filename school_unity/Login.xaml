@@ -21,7 +21,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            
+
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="65" FontSize="14"  Grid.Row="1" Text="Введите данные и нажмите &quot;Войти&quot;" Grid.Column="1" />
         <Button x:Name="EnterButton" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="47" Grid.Row="4" Background="White" Grid.Column="1" Click="EnterButton_Click"/>
@@ -29,6 +29,7 @@
         <PasswordBox x:Name="PasswordTB" HorizontalAlignment="Center" Height="24"  Grid.Row="3" VerticalAlignment="Bottom" Width="250" Margin="0,0,0,18" />
         <TextBlock x:Name="textBlockL" HorizontalAlignment="Center"  VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="23" FontSize="14"  Grid.Row="2" Text="Имя пользователя:" Grid.Column="1"   />
         <TextBlock x:Name="textBlockP" HorizontalAlignment="Center"  VerticalAlignment="Top" FontWeight="Bold" Width="250" Height="23" FontSize="14"  Grid.Row="3" Text="Пароль:" Grid.Column="1"   />
+        <Button x:Name="EnterButton_Copy" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="46" Grid.Row="4" Background="White" Click="EnterButton2_Click" Margin="138,59,137,0" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>

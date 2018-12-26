@@ -26,9 +26,9 @@ namespace school_unity
         RoleTableAdapter rta = new RoleTableAdapter();
         UserTableAdapter uta = new UserTableAdapter();
 
-        
 
-        
+
+
         public Registration()
         {
             InitializeComponent();
@@ -40,9 +40,9 @@ namespace school_unity
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            rta.Fill(ds.Role); 
+            rta.Fill(ds.Role);
             ComboBox.ItemsSource = ds.Role;
-            
+
         }
 
         public string ComputeHash(string input, HashAlgorithm algorithm)
@@ -58,9 +58,9 @@ namespace school_unity
         {
             string log = Login.Text;
             string pas = ComputeHash(Password.Text, new SHA256CryptoServiceProvider());
-            string role = ComboBox.SelectionBoxItem.ToString();
-               
-            
+            int role=0;
+
+
 
 
             var registrationcheck = uta.Catch(ds.User, log);
@@ -71,6 +71,31 @@ namespace school_unity
             }
             else
             { //Если всё верно, то вносим нового пользователя в БД
+
+                if (ComboBox.SelectedItem.ToString() == "ADMIN")
+                { role = 1; }
+                else
+                {
+                    if (ComboBox.SelectedItem.ToString() == "HEADTEACHER")
+                    {
+                        role = 2;
+                    }
+                    else
+                    {
+                        if (ComboBox.SelectedItem.ToString() == "MATH")
+                        {
+                            role = 4;
+                        }
+                        else
+                        {
+                            if (ComboBox.SelectedItem.ToString() == "PHYS")
+                            {
+                                role = 5;
+                            }
+                        }
+                    }
+                }
+
 
                 uta.Register(log, pas, role);
 
@@ -88,5 +113,6 @@ namespace school_unity
             }
         }
     }
-
 }
+
+

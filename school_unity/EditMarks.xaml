@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:school_unity"
       mc:Ignorable="d" d:DesignWidth="600"
-      Title="EditMarks" Height="600">
+      Title="EditMarks" Height="358">
 
-    <StackPanel>
-        <DataGrid x:Name="Marks" Height="220" Loaded="Marks_Loaded" AutoGenerateColumns="False" DisplayMemberPath="Name">
+    <StackPanel Margin="0,0,0,28">
+        <DataGrid x:Name="Marks" Height="220" Loaded="Marks_Loaded" IsReadOnly="True" AutoGenerateColumns="False" DisplayMemberPath="Name">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding StudentName}"  IsReadOnly="True" Header="Имя" Width="*" />
@@ -25,9 +25,6 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button x:Name="Add" Content="Добавить"  Height="25" Click="Add_Click"/>
-        <Button x:Name="Delete" Content="Удалить"  Height="25"/>
-        <Button x:Name="Update" Content="Обновить"  Height="25" Click="Update_Click"/>
         <Button x:Name="Back" Content="Назад"  Height="25" Click="Back_Click"/>
 
     </StackPanel>

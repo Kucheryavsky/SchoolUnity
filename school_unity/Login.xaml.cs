@@ -61,7 +61,12 @@ namespace school_unity
                     NavigationService.Navigate(new UserMenu.admin());
                 }
 
-            
+                if (UserRole == "2")
+                {
+                    NavigationService.Navigate(new UserMenu.Headteacher());
+                }
+
+
                 if (UserRole == "4")
                 {
                     NavigationService.Navigate(new UserMenu.teacher());

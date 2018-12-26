@@ -28,7 +28,7 @@ namespace school_unity
         StudentTableAdapter sta = new StudentTableAdapter();
         SubjectTableAdapter subta = new SubjectTableAdapter();
         DataTable1TableAdapter dtdt = new DataTable1TableAdapter();
-        DataRowView _dataRow;
+        
         public EditMarks()
         {
             InitializeComponent();
@@ -39,18 +39,7 @@ namespace school_unity
             dtdt.Fill(ds.DataTable1); //Заполняем datagrid
             Marks.ItemsSource = ds.DataTable1;
             
-        }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Update_Click(object sender, RoutedEventArgs e)
-        {
-            /*_dataRow = dataRow as DataRowView;
-            dataRow = Marks.SelectedItem;
-             dtdt.Upd(1,1,1,1,1,1);   */        
-        }
+        }  
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {

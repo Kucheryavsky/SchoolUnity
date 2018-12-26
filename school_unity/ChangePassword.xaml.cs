@@ -1,6 +1,8 @@
-﻿using System;
+﻿using school_unity.DataSet1TableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,6 +22,11 @@ namespace school_unity
     /// </summary>
     public partial class ChangePassword : Page
     {
+        DataSet1 ds = new DataSet1();
+        MarkManagementTableAdapter mmta = new MarkManagementTableAdapter();
+        StudentTableAdapter sta = new StudentTableAdapter();
+        SubjectTableAdapter subta = new SubjectTableAdapter();
+        DataTable1TableAdapter dtdt = new DataTable1TableAdapter();
         public ChangePassword()
         {
             InitializeComponent();
@@ -36,19 +43,19 @@ namespace school_unity
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(OldPas==)
-            string pas = ComputeHash(Password.Text, new SHA256CryptoServiceProvider());
+            //if(OldPas.Text==1)
+            //string pas = ComputeHash(Password.Text, new SHA256CryptoServiceProvider());
             
 
 
 
 
-            var registrationcheck = uta.Catch(ds.User, log);
-            if (registrationcheck == 1)//Проверяем наличие идентичного логина в БД
-            {
-                MessageBox.Show("К сожалению, пользователь с таким же именем уже зарегистрирован! Пожалуйста измените логин.");
-                return;
-            }
+            //var registrationcheck = uta.Catch(ds.User, log);
+          //  if (registrationcheck == 1)//Проверяем наличие идентичного логина в БД
+           // {
+          //      MessageBox.Show("К сожалению, пользователь с таким же именем уже зарегистрирован! Пожалуйста измените логин.");
+          //      return;
+           // }
         }
     }
 }

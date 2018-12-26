@@ -43,16 +43,27 @@ namespace school_unity
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            string login = Login.Text;
             string pas = ComputeHash(OldPas.Text, new SHA256CryptoServiceProvider());
             string pasnew = ComputeHash(NewPas.Text, new SHA256CryptoServiceProvider());
+            string repeatpas = ComputeHash(Repeat.Text, new SHA256CryptoServiceProvider());
 
-            var registrationcheck = uta.FillPassword(ds.User, OldPas.Text);
+            var registrationcheck = uta.LoginFill(ds.User, login, pas);
            if (registrationcheck == 1)//Проверяем наличие идентичного логина в БД
             {
-                if (Repeat.Text == NewPas.Text)
+                if (pasnew == repeatpas)
                 {
-                    uta.NewPassword(pasnew);
+                    uta.NewPassword(login, pasnew, login, pas);
+                    MessageBox.Show("Вы успешно изменили пароль!");
                 }
+                else
+                {
+                    MessageBox.Show("Новый пароль не совпадает с повторным!");
+                }
+            }
+           else
+            {
+                MessageBox.Show("НЕ ПРАВИЛЬНО! ШИРОКАЯ НА ШИРОКУЮ!");
             }
         }
     }

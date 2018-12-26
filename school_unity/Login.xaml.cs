@@ -33,6 +33,15 @@ namespace school_unity
         DataSet1 ds = new DataSet1();
         UserTableAdapter uta = new UserTableAdapter();
 
+        public string ComputeHash(string input, HashAlgorithm algorithm)
+        {
+            Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+
+            Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
+
+            return BitConverter.ToString(hashedBytes);
+        }
+
         public string CalculateSHA256Hash()
         {
 
@@ -47,7 +56,8 @@ namespace school_unity
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
             string Login = LoginTB.Text;
-            string Password = CalculateSHA256Hash(); 
+            string Password = ComputeHash(PasswordTB.Password, new SHA256CryptoServiceProvider());
+            // string Password = CalculateSHA256Hash(); 
             // school_unity.PubLogin = Login; //Запоминаем логин пользователя, для дальнейшего взаимодействия
 
 

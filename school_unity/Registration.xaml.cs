@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace school_unity
 {
@@ -58,11 +59,7 @@ namespace school_unity
         {
             string log = Login.Text;
             string pas = ComputeHash(Password.Text, new SHA256CryptoServiceProvider());
-            int role=0;
-
-
-
-
+            
             var registrationcheck = uta.Catch(ds.User, log);
             if (registrationcheck == 1)//Проверяем наличие идентичного логина в БД
             {
@@ -72,32 +69,10 @@ namespace school_unity
             else
             { //Если всё верно, то вносим нового пользователя в БД
 
-                if (ComboBox.SelectedItem.ToString() == "ADMIN")
-                { role = 1; }
-                else
-                {
-                    if (ComboBox.SelectedItem.ToString() == "HEADTEACHER")
-                    {
-                        role = 2;
-                    }
-                    else
-                    {
-                        if (ComboBox.SelectedItem.ToString() == "MATH")
-                        {
-                            role = 4;
-                        }
-                        else
-                        {
-                            if (ComboBox.SelectedItem.ToString() == "PHYS")
-                            {
-                                role = 5;
-                            }
-                        }
-                    }
-                }
+                var roleID = (int)(ComboBox.SelectedItem as DataRowView)["RoleID"];
 
-
-                uta.Register(log, pas, role);
+                
+                uta.Register(log, pas, roleID);
 
                 var logining = uta.LoginFill(ds.User, log, pas);
                 if (logining == 1)//Проверяем появился ли пользователь в БД

@@ -33,7 +33,7 @@ namespace school_unity
 
         private void Marks_Loaded(object sender, RoutedEventArgs e)
         {
-            uta.Fill(ds.User); 
+            uta.DeleteUserFill(ds.User); 
             Users.ItemsSource = ds.User;
 
         }
@@ -52,9 +52,10 @@ namespace school_unity
             var Login = (Users.SelectedItem as DataRowView)["Login"];
             var Password = (Users.SelectedItem as DataRowView)["Password"];
             var roleID = (Users.SelectedItem as DataRowView)["RoleID"];
+          
 
             uta.Delete(UserID, Login.ToString(), Password.ToString(), roleID.ToString());
-            uta.Fill(ds.User);
+            uta.DeleteUserFill(ds.User);
             Users.ItemsSource = ds.User;
         }
     }

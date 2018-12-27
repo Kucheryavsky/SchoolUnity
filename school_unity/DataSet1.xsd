@@ -134,7 +134,7 @@ WHERE (Login=?) </CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Delete1" Modifier="Public" Name="Delete1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Delete1">
+              <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Delete1" Modifier="Public" Name="Delete1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Delete1">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM `User` WHERE ((`UserID` = ?) AND ((? = 1 AND `Login` IS NULL) OR (`Login` = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)) AND ((? = 1 AND `RoleID` IS NULL) OR (`RoleID` = ?)))</CommandText>
@@ -149,6 +149,16 @@ WHERE (Login=?) </CommandText>
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="DeleteUserFill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="DeleteUserGet" GeneratorSourceName="DeleteUserFill" GetMethodModifier="Public" GetMethodName="DeleteUserGet" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DeleteUserGet" UserSourceName="DeleteUserFill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [User].UserID, [User].Login, [User].[Password], [User].RoleID, Role.RoleName
+FROM            ([User] INNER JOIN
+                         Role ON [User].RoleID = Role.RoleID)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
               <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectName="[User]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillPassword" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPassword" GeneratorSourceName="FillPassword" GetMethodModifier="Public" GetMethodName="GetPassword" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPassword" UserSourceName="FillPassword">
                 <SelectCommand>
@@ -175,7 +185,7 @@ WHERE (Login=?) and (Password=?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NewPassword" Modifier="Public" Name="NewPassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="NewPassword">
+              <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NewPassword" Modifier="Public" Name="NewPassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="NewPassword">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       [User]
@@ -190,7 +200,7 @@ WHERE  Login = ?  and [Password] = ?</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Register" Modifier="Public" Name="Register" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Register">
+              <DbSource ConnectionRef="unityConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Register" Modifier="Public" Name="Register" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Register">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `User` ( `Login`, `Password`, `RoleID`) VALUES (?, ?, ?)</CommandText>
@@ -754,7 +764,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AboutRelations" msprop:Generator_TableClassName="AboutRelationsDataTable" msprop:Generator_TableVarName="tableAboutRelations" msprop:Generator_RowChangedName="AboutRelationsRowChanged" msprop:Generator_TablePropName="AboutRelations" msprop:Generator_RowDeletingName="AboutRelationsRowDeleting" msprop:Generator_RowChangingName="AboutRelationsRowChanging" msprop:Generator_RowEvHandlerName="AboutRelationsRowChangeEventHandler" msprop:Generator_RowDeletedName="AboutRelationsRowDeleted" msprop:Generator_RowClassName="AboutRelationsRow" msprop:Generator_UserTableName="AboutRelations" msprop:Generator_RowEvArgName="AboutRelationsRowChangeEvent">
+        <xs:element name="AboutRelations" msprop:Generator_TableClassName="AboutRelationsDataTable" msprop:Generator_TableVarName="tableAboutRelations" msprop:Generator_TablePropName="AboutRelations" msprop:Generator_RowDeletingName="AboutRelationsRowDeleting" msprop:Generator_RowChangingName="AboutRelationsRowChanging" msprop:Generator_RowEvHandlerName="AboutRelationsRowChangeEventHandler" msprop:Generator_RowDeletedName="AboutRelationsRowDeleted" msprop:Generator_UserTableName="AboutRelations" msprop:Generator_RowChangedName="AboutRelationsRowChanged" msprop:Generator_RowEvArgName="AboutRelationsRowChangeEvent" msprop:Generator_RowClassName="AboutRelationsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StudentID" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" />
@@ -763,7 +773,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="User" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_TablePropName="User" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_RowClassName="UserRow" msprop:Generator_UserTableName="User" msprop:Generator_RowEvArgName="UserRowChangeEvent">
+        <xs:element name="User" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser" msprop:Generator_TablePropName="User" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_UserTableName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_RowClassName="UserRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
@@ -791,7 +801,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MarkManagement" msprop:Generator_TableClassName="MarkManagementDataTable" msprop:Generator_TableVarName="tableMarkManagement" msprop:Generator_RowChangedName="MarkManagementRowChanged" msprop:Generator_TablePropName="MarkManagement" msprop:Generator_RowDeletingName="MarkManagementRowDeleting" msprop:Generator_RowChangingName="MarkManagementRowChanging" msprop:Generator_RowEvHandlerName="MarkManagementRowChangeEventHandler" msprop:Generator_RowDeletedName="MarkManagementRowDeleted" msprop:Generator_RowClassName="MarkManagementRow" msprop:Generator_UserTableName="MarkManagement" msprop:Generator_RowEvArgName="MarkManagementRowChangeEvent">
+        <xs:element name="MarkManagement" msprop:Generator_TableClassName="MarkManagementDataTable" msprop:Generator_TableVarName="tableMarkManagement" msprop:Generator_TablePropName="MarkManagement" msprop:Generator_RowDeletingName="MarkManagementRowDeleting" msprop:Generator_RowChangingName="MarkManagementRowChanging" msprop:Generator_RowEvHandlerName="MarkManagementRowChangeEventHandler" msprop:Generator_RowDeletedName="MarkManagementRowDeleted" msprop:Generator_UserTableName="MarkManagement" msprop:Generator_RowChangedName="MarkManagementRowChanged" msprop:Generator_RowEvArgName="MarkManagementRowChangeEvent" msprop:Generator_RowClassName="MarkManagementRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StudentID" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" />
@@ -813,7 +823,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Parent" msprop:Generator_TableClassName="ParentDataTable" msprop:Generator_TableVarName="tableParent" msprop:Generator_RowChangedName="ParentRowChanged" msprop:Generator_TablePropName="Parent" msprop:Generator_RowDeletingName="ParentRowDeleting" msprop:Generator_RowChangingName="ParentRowChanging" msprop:Generator_RowEvHandlerName="ParentRowChangeEventHandler" msprop:Generator_RowDeletedName="ParentRowDeleted" msprop:Generator_RowClassName="ParentRow" msprop:Generator_UserTableName="Parent" msprop:Generator_RowEvArgName="ParentRowChangeEvent">
+        <xs:element name="Parent" msprop:Generator_TableClassName="ParentDataTable" msprop:Generator_TableVarName="tableParent" msprop:Generator_TablePropName="Parent" msprop:Generator_RowDeletingName="ParentRowDeleting" msprop:Generator_RowChangingName="ParentRowChanging" msprop:Generator_RowEvHandlerName="ParentRowChangeEventHandler" msprop:Generator_RowDeletedName="ParentRowDeleted" msprop:Generator_UserTableName="Parent" msprop:Generator_RowChangedName="ParentRowChanged" msprop:Generator_RowEvArgName="ParentRowChangeEvent" msprop:Generator_RowClassName="ParentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ParentID" msprop:Generator_ColumnVarNameInTable="columnParentID" msprop:Generator_ColumnPropNameInRow="ParentID" msprop:Generator_ColumnPropNameInTable="ParentIDColumn" msprop:Generator_UserColumnName="ParentID" type="xs:int" />
@@ -856,7 +866,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Relation" msprop:Generator_TableClassName="RelationDataTable" msprop:Generator_TableVarName="tableRelation" msprop:Generator_RowChangedName="RelationRowChanged" msprop:Generator_TablePropName="Relation" msprop:Generator_RowDeletingName="RelationRowDeleting" msprop:Generator_RowChangingName="RelationRowChanging" msprop:Generator_RowEvHandlerName="RelationRowChangeEventHandler" msprop:Generator_RowDeletedName="RelationRowDeleted" msprop:Generator_RowClassName="RelationRow" msprop:Generator_UserTableName="Relation" msprop:Generator_RowEvArgName="RelationRowChangeEvent">
+        <xs:element name="Relation" msprop:Generator_TableClassName="RelationDataTable" msprop:Generator_TableVarName="tableRelation" msprop:Generator_TablePropName="Relation" msprop:Generator_RowDeletingName="RelationRowDeleting" msprop:Generator_RowChangingName="RelationRowChanging" msprop:Generator_RowEvHandlerName="RelationRowChangeEventHandler" msprop:Generator_RowDeletedName="RelationRowDeleted" msprop:Generator_UserTableName="Relation" msprop:Generator_RowChangedName="RelationRowChanged" msprop:Generator_RowEvArgName="RelationRowChangeEvent" msprop:Generator_RowClassName="RelationRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RelationID" msprop:Generator_ColumnVarNameInTable="columnRelationID" msprop:Generator_ColumnPropNameInRow="RelationID" msprop:Generator_ColumnPropNameInTable="RelationIDColumn" msprop:Generator_UserColumnName="RelationID" type="xs:int" />
@@ -870,7 +880,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Role" msprop:Generator_TableClassName="RoleDataTable" msprop:Generator_TableVarName="tableRole" msprop:Generator_RowChangedName="RoleRowChanged" msprop:Generator_TablePropName="Role" msprop:Generator_RowDeletingName="RoleRowDeleting" msprop:Generator_RowChangingName="RoleRowChanging" msprop:Generator_RowEvHandlerName="RoleRowChangeEventHandler" msprop:Generator_RowDeletedName="RoleRowDeleted" msprop:Generator_RowClassName="RoleRow" msprop:Generator_UserTableName="Role" msprop:Generator_RowEvArgName="RoleRowChangeEvent">
+        <xs:element name="Role" msprop:Generator_TableClassName="RoleDataTable" msprop:Generator_TableVarName="tableRole" msprop:Generator_TablePropName="Role" msprop:Generator_RowDeletingName="RoleRowDeleting" msprop:Generator_RowChangingName="RoleRowChanging" msprop:Generator_RowEvHandlerName="RoleRowChangeEventHandler" msprop:Generator_RowDeletedName="RoleRowDeleted" msprop:Generator_UserTableName="Role" msprop:Generator_RowChangedName="RoleRowChanged" msprop:Generator_RowEvArgName="RoleRowChangeEvent" msprop:Generator_RowClassName="RoleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RoleID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRoleID" msprop:Generator_ColumnPropNameInRow="RoleID" msprop:Generator_ColumnPropNameInTable="RoleIDColumn" msprop:Generator_UserColumnName="RoleID" type="xs:int" />
@@ -884,7 +894,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Street" msprop:Generator_TableClassName="StreetDataTable" msprop:Generator_TableVarName="tableStreet" msprop:Generator_RowChangedName="StreetRowChanged" msprop:Generator_TablePropName="Street" msprop:Generator_RowDeletingName="StreetRowDeleting" msprop:Generator_RowChangingName="StreetRowChanging" msprop:Generator_RowEvHandlerName="StreetRowChangeEventHandler" msprop:Generator_RowDeletedName="StreetRowDeleted" msprop:Generator_RowClassName="StreetRow" msprop:Generator_UserTableName="Street" msprop:Generator_RowEvArgName="StreetRowChangeEvent">
+        <xs:element name="Street" msprop:Generator_TableClassName="StreetDataTable" msprop:Generator_TableVarName="tableStreet" msprop:Generator_TablePropName="Street" msprop:Generator_RowDeletingName="StreetRowDeleting" msprop:Generator_RowChangingName="StreetRowChanging" msprop:Generator_RowEvHandlerName="StreetRowChangeEventHandler" msprop:Generator_RowDeletedName="StreetRowDeleted" msprop:Generator_UserTableName="Street" msprop:Generator_RowChangedName="StreetRowChanged" msprop:Generator_RowEvArgName="StreetRowChangeEvent" msprop:Generator_RowClassName="StreetRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StreetID" msprop:Generator_ColumnVarNameInTable="columnStreetID" msprop:Generator_ColumnPropNameInRow="StreetID" msprop:Generator_ColumnPropNameInTable="StreetIDColumn" msprop:Generator_UserColumnName="StreetID" type="xs:int" />
@@ -898,7 +908,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Student" msprop:Generator_TableClassName="StudentDataTable" msprop:Generator_TableVarName="tableStudent" msprop:Generator_RowChangedName="StudentRowChanged" msprop:Generator_TablePropName="Student" msprop:Generator_RowDeletingName="StudentRowDeleting" msprop:Generator_RowChangingName="StudentRowChanging" msprop:Generator_RowEvHandlerName="StudentRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentRowDeleted" msprop:Generator_RowClassName="StudentRow" msprop:Generator_UserTableName="Student" msprop:Generator_RowEvArgName="StudentRowChangeEvent">
+        <xs:element name="Student" msprop:Generator_TableClassName="StudentDataTable" msprop:Generator_TableVarName="tableStudent" msprop:Generator_TablePropName="Student" msprop:Generator_RowDeletingName="StudentRowDeleting" msprop:Generator_RowChangingName="StudentRowChanging" msprop:Generator_RowEvHandlerName="StudentRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentRowDeleted" msprop:Generator_UserTableName="Student" msprop:Generator_RowChangedName="StudentRowChanged" msprop:Generator_RowEvArgName="StudentRowChangeEvent" msprop:Generator_RowClassName="StudentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" minOccurs="0" />
@@ -944,7 +954,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Subject" msprop:Generator_TableClassName="SubjectDataTable" msprop:Generator_TableVarName="tableSubject" msprop:Generator_RowChangedName="SubjectRowChanged" msprop:Generator_TablePropName="Subject" msprop:Generator_RowDeletingName="SubjectRowDeleting" msprop:Generator_RowChangingName="SubjectRowChanging" msprop:Generator_RowEvHandlerName="SubjectRowChangeEventHandler" msprop:Generator_RowDeletedName="SubjectRowDeleted" msprop:Generator_RowClassName="SubjectRow" msprop:Generator_UserTableName="Subject" msprop:Generator_RowEvArgName="SubjectRowChangeEvent">
+        <xs:element name="Subject" msprop:Generator_TableClassName="SubjectDataTable" msprop:Generator_TableVarName="tableSubject" msprop:Generator_TablePropName="Subject" msprop:Generator_RowDeletingName="SubjectRowDeleting" msprop:Generator_RowChangingName="SubjectRowChanging" msprop:Generator_RowEvHandlerName="SubjectRowChangeEventHandler" msprop:Generator_RowDeletedName="SubjectRowDeleted" msprop:Generator_UserTableName="Subject" msprop:Generator_RowChangedName="SubjectRowChanged" msprop:Generator_RowEvArgName="SubjectRowChangeEvent" msprop:Generator_RowClassName="SubjectRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SubjectID" msprop:Generator_ColumnVarNameInTable="columnSubjectID" msprop:Generator_ColumnPropNameInRow="SubjectID" msprop:Generator_ColumnPropNameInTable="SubjectIDColumn" msprop:Generator_UserColumnName="SubjectID" type="xs:int" />
@@ -958,7 +968,7 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SubjectName" msprop:Generator_ColumnVarNameInTable="columnSubjectName" msprop:Generator_ColumnPropNameInRow="SubjectName" msprop:Generator_ColumnPropNameInTable="SubjectNameColumn" msprop:Generator_UserColumnName="SubjectName" minOccurs="0">
@@ -1040,14 +1050,14 @@ SET                FirstMark = ?, SecondMark = ?, ThirdMark = ?, FourthMark = ?,
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="ParentAboutRelations" msdata:parent="Parent" msdata:child="AboutRelations" msdata:parentkey="ParentID" msdata:childkey="ParentID" msprop:Generator_UserChildTable="AboutRelations" msprop:Generator_ChildPropName="GetAboutRelationsRows" msprop:Generator_UserRelationName="ParentAboutRelations" msprop:Generator_ParentPropName="ParentRow" msprop:Generator_RelationVarName="relationParentAboutRelations" msprop:Generator_UserParentTable="Parent" />
-      <msdata:Relationship name="RelationAboutRelations" msdata:parent="Relation" msdata:child="AboutRelations" msdata:parentkey="RelationID" msdata:childkey="RelationID" msprop:Generator_UserChildTable="AboutRelations" msprop:Generator_ChildPropName="GetAboutRelationsRows" msprop:Generator_UserRelationName="RelationAboutRelations" msprop:Generator_ParentPropName="RelationRow" msprop:Generator_RelationVarName="relationRelationAboutRelations" msprop:Generator_UserParentTable="Relation" />
-      <msdata:Relationship name="StudentAboutRelations" msdata:parent="Student" msdata:child="AboutRelations" msdata:parentkey="StudentID" msdata:childkey="StudentID" msprop:Generator_UserChildTable="AboutRelations" msprop:Generator_ChildPropName="GetAboutRelationsRows" msprop:Generator_UserRelationName="StudentAboutRelations" msprop:Generator_ParentPropName="StudentRow" msprop:Generator_RelationVarName="relationStudentAboutRelations" msprop:Generator_UserParentTable="Student" />
-      <msdata:Relationship name="StudentMarkManagement" msdata:parent="Student" msdata:child="MarkManagement" msdata:parentkey="StudentID" msdata:childkey="StudentID" msprop:Generator_UserChildTable="MarkManagement" msprop:Generator_ChildPropName="GetMarkManagementRows" msprop:Generator_UserRelationName="StudentMarkManagement" msprop:Generator_ParentPropName="StudentRow" msprop:Generator_RelationVarName="relationStudentMarkManagement" msprop:Generator_UserParentTable="Student" />
-      <msdata:Relationship name="SubjectMarkManagement" msdata:parent="Subject" msdata:child="MarkManagement" msdata:parentkey="SubjectID" msdata:childkey="SubjectID" msprop:Generator_UserChildTable="MarkManagement" msprop:Generator_ChildPropName="GetMarkManagementRows" msprop:Generator_UserRelationName="SubjectMarkManagement" msprop:Generator_ParentPropName="SubjectRow" msprop:Generator_RelationVarName="relationSubjectMarkManagement" msprop:Generator_UserParentTable="Subject" />
-      <msdata:Relationship name="StreetParent" msdata:parent="Street" msdata:child="Parent" msdata:parentkey="StreetID" msdata:childkey="StreetID" msprop:Generator_UserChildTable="Parent" msprop:Generator_ChildPropName="GetParentRows" msprop:Generator_UserRelationName="StreetParent" msprop:Generator_ParentPropName="StreetRow" msprop:Generator_RelationVarName="relationStreetParent" msprop:Generator_UserParentTable="Street" />
-      <msdata:Relationship name="StreetStudent" msdata:parent="Street" msdata:child="Student" msdata:parentkey="StreetID" msdata:childkey="StreetID" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_UserRelationName="StreetStudent" msprop:Generator_RelationVarName="relationStreetStudent" msprop:Generator_UserParentTable="Street" msprop:Generator_ParentPropName="StreetRow" />
-      <msdata:Relationship name="UserStudent" msdata:parent="User" msdata:child="Student" msdata:parentkey="UserID" msdata:childkey="UserID" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_UserRelationName="UserStudent" msprop:Generator_RelationVarName="relationUserStudent" msprop:Generator_UserParentTable="User" msprop:Generator_ParentPropName="UserRow" />
+      <msdata:Relationship name="ParentAboutRelations" msdata:parent="Parent" msdata:child="AboutRelations" msdata:parentkey="ParentID" msdata:childkey="ParentID" msprop:Generator_UserChildTable="AboutRelations" msprop:Generator_ChildPropName="GetAboutRelationsRows" msprop:Generator_UserRelationName="ParentAboutRelations" msprop:Generator_RelationVarName="relationParentAboutRelations" msprop:Generator_UserParentTable="Parent" msprop:Generator_ParentPropName="ParentRow" />
+      <msdata:Relationship name="RelationAboutRelations" msdata:parent="Relation" msdata:child="AboutRelations" msdata:parentkey="RelationID" msdata:childkey="RelationID" msprop:Generator_UserChildTable="AboutRelations" msprop:Generator_ChildPropName="GetAboutRelationsRows" msprop:Generator_UserRelationName="RelationAboutRelations" msprop:Generator_RelationVarName="relationRelationAboutRelations" msprop:Generator_UserParentTable="Relation" msprop:Generator_ParentPropName="RelationRow" />
+      <msdata:Relationship name="StudentAboutRelations" msdata:parent="Student" msdata:child="AboutRelations" msdata:parentkey="StudentID" msdata:childkey="StudentID" msprop:Generator_UserChildTable="AboutRelations" msprop:Generator_ChildPropName="GetAboutRelationsRows" msprop:Generator_UserRelationName="StudentAboutRelations" msprop:Generator_RelationVarName="relationStudentAboutRelations" msprop:Generator_UserParentTable="Student" msprop:Generator_ParentPropName="StudentRow" />
+      <msdata:Relationship name="StudentMarkManagement" msdata:parent="Student" msdata:child="MarkManagement" msdata:parentkey="StudentID" msdata:childkey="StudentID" msprop:Generator_UserChildTable="MarkManagement" msprop:Generator_ChildPropName="GetMarkManagementRows" msprop:Generator_UserRelationName="StudentMarkManagement" msprop:Generator_RelationVarName="relationStudentMarkManagement" msprop:Generator_UserParentTable="Student" msprop:Generator_ParentPropName="StudentRow" />
+      <msdata:Relationship name="SubjectMarkManagement" msdata:parent="Subject" msdata:child="MarkManagement" msdata:parentkey="SubjectID" msdata:childkey="SubjectID" msprop:Generator_UserChildTable="MarkManagement" msprop:Generator_ChildPropName="GetMarkManagementRows" msprop:Generator_UserRelationName="SubjectMarkManagement" msprop:Generator_RelationVarName="relationSubjectMarkManagement" msprop:Generator_UserParentTable="Subject" msprop:Generator_ParentPropName="SubjectRow" />
+      <msdata:Relationship name="StreetParent" msdata:parent="Street" msdata:child="Parent" msdata:parentkey="StreetID" msdata:childkey="StreetID" msprop:Generator_UserChildTable="Parent" msprop:Generator_ChildPropName="GetParentRows" msprop:Generator_UserRelationName="StreetParent" msprop:Generator_RelationVarName="relationStreetParent" msprop:Generator_UserParentTable="Street" msprop:Generator_ParentPropName="StreetRow" />
+      <msdata:Relationship name="StreetStudent" msdata:parent="Street" msdata:child="Student" msdata:parentkey="StreetID" msdata:childkey="StreetID" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_UserRelationName="StreetStudent" msprop:Generator_ParentPropName="StreetRow" msprop:Generator_RelationVarName="relationStreetStudent" msprop:Generator_UserParentTable="Street" />
+      <msdata:Relationship name="UserStudent" msdata:parent="User" msdata:child="Student" msdata:parentkey="UserID" msdata:childkey="UserID" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_UserRelationName="UserStudent" msprop:Generator_ParentPropName="UserRow" msprop:Generator_RelationVarName="relationUserStudent" msprop:Generator_UserParentTable="User" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

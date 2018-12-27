@@ -11,10 +11,10 @@
         <DataGrid x:Name="Users" Height="220" Loaded="Marks_Loaded" IsReadOnly="True" AutoGenerateColumns="False" DisplayMemberPath="Name">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding UserID}"  Header="UserID" Width="*" />
-                <DataGridTextColumn Binding="{Binding Login}" IsReadOnly="True" Header="Login" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Password}"  Header="Password" Width="*"/>
-                <DataGridTextColumn Binding="{Binding RoleID}"  Header="RoleID" Width="*"/>
+                
+                <DataGridTextColumn Binding="{Binding Login}" IsReadOnly="True" Header="Логин" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Password}"  Header="Пароль" Width="*"/>
+                <DataGridTextColumn Binding="{Binding RoleName}"  Header="Роль" Width="*"/>
                
             </DataGrid.Columns>
 
